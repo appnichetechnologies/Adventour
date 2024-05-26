@@ -1,0 +1,19 @@
+{
+  "id": "mig_cp9otu0l703neuhj6r00",
+  "parentID": "mig_cp9otobrgin2nopfikkg",
+  "checksum": "1:cb87e8b5b4cd9e8828f08753a40989019a738c6d78aad56a6a779f11cb75891c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Accomodations",
+          "type": "link",
+          "link": {
+            "table": "accomodations"
+          }
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

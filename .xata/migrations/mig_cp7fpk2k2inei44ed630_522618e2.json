@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fpk2k2inei44ed630",
+  "parentID": "mig_cp7fpbak2inei44ed620",
+  "checksum": "1:522618e2da18ba06bffec706f820e22d634ea665c1b2153a447c9349250ddff6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Description",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "A  place in the mountains"
+        },
+        "table": "destinations"
+      }
+    }
+  ]
+}

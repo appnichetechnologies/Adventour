@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp9ougbrgin2nopfiklg",
+  "parentID": "mig_cp9ouc0bnhe4hhtsrf2g",
+  "checksum": "1:99d41df6344e89f1f95701d5951a0cdfe6785781bf6380404224d95afdbe22a5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "EndDate",
+          "type": "datetime",
+          "notNull": true,
+          "defaultValue": "now"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

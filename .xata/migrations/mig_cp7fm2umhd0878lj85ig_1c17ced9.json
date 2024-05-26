@@ -1,0 +1,12 @@
+{
+  "id": "mig_cp7fm2umhd0878lj85ig",
+  "parentID": "mig_cp7flu6mhd0878lj85h0",
+  "checksum": "1:1c17ced996d0657e04b9aeccbc992e29b7cf170067aee0e639264b60218b3e1b",
+  "operations": [
+    {
+      "addTable": {
+        "table": "destinations"
+      }
+    }
+  ]
+}

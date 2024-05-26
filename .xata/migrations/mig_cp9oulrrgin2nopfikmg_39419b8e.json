@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp9oulrrgin2nopfikmg",
+  "parentID": "mig_cp9ougbrgin2nopfiklg",
+  "checksum": "1:39419b8e589b0bf67c6aa6fb4c4f3012ee3764ceabe8b7d52ced2711aa854cc4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Price",
+          "type": "float",
+          "notNull": true,
+          "defaultValue": "10000.00"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "mig_cp7foq2k2inei44ed610",
+  "parentID": "mig_cp7fm2umhd0878lj85ig",
+  "checksum": "1:5f7da915729520495e1ef49a7adcc0349eb348dbb08aa85fdc38fae305c36879",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Name",
+          "type": "string",
+          "unique": true
+        },
+        "table": "destinations"
+      }
+    }
+  ]
+}

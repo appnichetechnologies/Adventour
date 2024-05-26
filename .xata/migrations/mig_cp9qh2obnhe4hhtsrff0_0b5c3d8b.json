@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp9qh2obnhe4hhtsrff0",
+  "parentID": "mig_cp9ovn8bnhe4hhtsrf4g",
+  "checksum": "1:0b5c3d8be2df2b388a16103b834a98d832317956b9c0f8153ee0b57c1ae39d58",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Description",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "xxxxxxx"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

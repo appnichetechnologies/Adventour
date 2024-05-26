@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fqi2k2inei44ed660",
+  "parentID": "mig_cp7fqa91l6iqh99kedj0",
+  "checksum": "1:1a7727640d61b4ffe8e1d1da9c712588efc66b2382c4c8a43880196348be2734",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "X Hotel"
+        },
+        "table": "accomodations"
+      }
+    }
+  ]
+}

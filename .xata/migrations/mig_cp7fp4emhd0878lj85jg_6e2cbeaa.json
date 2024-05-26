@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fp4emhd0878lj85jg",
+  "parentID": "mig_cp7foq2k2inei44ed610",
+  "checksum": "1:6e2cbeaa6b85f4252b8b18f978c239e0b85741563ad77384af580daa26900a90",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Country",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "India"
+        },
+        "table": "destinations"
+      }
+    }
+  ]
+}

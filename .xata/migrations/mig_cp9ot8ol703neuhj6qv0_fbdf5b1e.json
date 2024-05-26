@@ -1,0 +1,19 @@
+{
+  "id": "mig_cp9ot8ol703neuhj6qv0",
+  "parentID": "mig_cp9osujrgin2nopfikig",
+  "checksum": "1:fbdf5b1e008ed87e902115430fdb921e9024fc57ddc686c7400a65af8475d489",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Destination",
+          "type": "link",
+          "link": {
+            "table": "destinations"
+          }
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

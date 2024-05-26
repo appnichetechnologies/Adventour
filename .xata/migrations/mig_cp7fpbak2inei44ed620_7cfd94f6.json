@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fpbak2inei44ed620",
+  "parentID": "mig_cp7fp4emhd0878lj85jg",
+  "checksum": "1:7cfd94f697adde5eb0dab83035344e9fa103238681045b5017f3485ae600e7a7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Region",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "Mumbai, Maharashtra"
+        },
+        "table": "destinations"
+      }
+    }
+  ]
+}

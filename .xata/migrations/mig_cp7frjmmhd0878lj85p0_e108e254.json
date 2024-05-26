@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7frjmmhd0878lj85p0",
+  "parentID": "mig_cp7freemhd0878lj85o0",
+  "checksum": "1:e108e2541c872038108d3b6c6a10931ee2397749e65b5c8727ce3132ec54b42e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Guide",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "Guided"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

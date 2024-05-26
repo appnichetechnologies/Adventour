@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fr8umhd0878lj85mg",
+  "parentID": "mig_cp7fr42k2inei44ed670",
+  "checksum": "1:74b9f6b66914e0fa02267400e2ce02d1538b10be89c948a5b4b2292dbd974165",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "PricePerNight",
+          "type": "float",
+          "notNull": true,
+          "defaultValue": "10000.00"
+        },
+        "table": "accomodations"
+      }
+    }
+  ]
+}

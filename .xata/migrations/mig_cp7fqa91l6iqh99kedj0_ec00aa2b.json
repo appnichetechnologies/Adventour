@@ -1,0 +1,12 @@
+{
+  "id": "mig_cp7fqa91l6iqh99kedj0",
+  "parentID": "mig_cp7fq02k2inei44ed650",
+  "checksum": "1:ec00aa2b205962fca73c60f7963bf20d6fb8098a066fd55bfd7f050594dcc54b",
+  "operations": [
+    {
+      "addTable": {
+        "table": "accomodations"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cp9otobrgin2nopfikkg",
+  "parentID": "mig_cp9ot8ol703neuhj6qv0",
+  "checksum": "1:c39a7aef36481f532a747b362815ebd410d92bc488641b8fe59f714819f9bdb6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Activity",
+          "type": "link",
+          "link": {
+            "table": "activities"
+          }
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

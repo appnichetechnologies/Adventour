@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7frsqk2inei44ed69g",
+  "parentID": "mig_cp7frjmmhd0878lj85p0",
+  "checksum": "1:244bd093a8d206730d7e84f14dd435811e570e3b8236ceb9e664ed4364e1a900",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "Monsoon Package"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

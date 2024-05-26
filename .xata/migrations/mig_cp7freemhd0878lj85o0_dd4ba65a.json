@@ -1,0 +1,12 @@
+{
+  "id": "mig_cp7freemhd0878lj85o0",
+  "parentID": "mig_cp7fr8umhd0878lj85mg",
+  "checksum": "1:dd4ba65a1b95d331a545743ab80058840d4481519bf5d963369a4baf90b48b02",
+  "operations": [
+    {
+      "addTable": {
+        "table": "packages"
+      }
+    }
+  ]
+}

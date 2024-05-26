@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp9os2jrgin2nopfikfg",
+  "parentID": "mig_cp7fsn2k2inei44ed6c0",
+  "checksum": "1:a263477bc6c21f5d04a9b70f4f96f441e59079d1b145028bd0966c1d9d96f6ac",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Name",
+          "type": "string"
+        },
+        "table": "activities"
+      }
+    }
+  ]
+}

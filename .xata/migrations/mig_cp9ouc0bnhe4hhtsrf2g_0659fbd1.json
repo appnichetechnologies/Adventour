@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp9ouc0bnhe4hhtsrf2g",
+  "parentID": "mig_cp9otu0l703neuhj6r00",
+  "checksum": "1:0659fbd100a6550f4aeb7dd39ea006b59245eb876a115103afd341d48eac4615",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "StartDate",
+          "type": "datetime",
+          "notNull": true,
+          "defaultValue": "now"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

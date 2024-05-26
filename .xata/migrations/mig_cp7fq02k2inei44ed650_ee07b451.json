@@ -1,0 +1,19 @@
+{
+  "id": "mig_cp7fq02k2inei44ed650",
+  "parentID": "mig_cp7fpk2k2inei44ed630",
+  "checksum": "1:ee07b451cf6ca9636eb49471c1ff85293c327b1a100aaa804ab003be3ffd2837",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Image",
+          "type": "file[]",
+          "file[]": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "destinations"
+      }
+    }
+  ]
+}

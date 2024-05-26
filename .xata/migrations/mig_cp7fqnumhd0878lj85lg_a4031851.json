@@ -1,0 +1,19 @@
+{
+  "id": "mig_cp7fqnumhd0878lj85lg",
+  "parentID": "mig_cp7fqi2k2inei44ed660",
+  "checksum": "1:a403185184a7027a6436e23893b2620d9ef47a951c922550fec61f27351fd344",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Destination",
+          "type": "link",
+          "link": {
+            "table": "destinations"
+          }
+        },
+        "table": "accomodations"
+      }
+    }
+  ]
+}

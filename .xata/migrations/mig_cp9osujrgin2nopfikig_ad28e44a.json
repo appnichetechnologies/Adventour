@@ -1,0 +1,13 @@
+{
+  "id": "mig_cp9osujrgin2nopfikig",
+  "parentID": "mig_cp9osg3rgin2nopfikhg",
+  "checksum": "1:ad28e44a3fdd90aa7e42cc7e3d49bfb5752f41c10a569ca583fc50deaea31f38",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "Guide",
+        "table": "packages"
+      }
+    }
+  ]
+}

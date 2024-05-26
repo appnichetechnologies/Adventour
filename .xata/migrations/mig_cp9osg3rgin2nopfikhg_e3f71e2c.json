@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp9osg3rgin2nopfikhg",
+  "parentID": "mig_cp9os7rrgin2nopfikgg",
+  "checksum": "1:e3f71e2ce3a1ac20e19320bd83d26a8b0b2a3e02a4abd8b8b04e3fac808c0113",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Description",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "xxxxxx"
+        },
+        "table": "activities"
+      }
+    }
+  ]
+}

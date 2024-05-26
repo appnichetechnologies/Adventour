@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fs92k2inei44ed6ag",
+  "parentID": "mig_cp7frsqk2inei44ed69g",
+  "checksum": "1:50a5b7f12d9317f13e27c462fcbc8f48878d1dd8fe3bc0313a5a4785391e4d9c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Type",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "Mountains"
+        },
+        "table": "packages"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp7fr42k2inei44ed670",
+  "parentID": "mig_cp7fqnumhd0878lj85lg",
+  "checksum": "1:4e36d981a51529eb337818722f2b2ef3eeeaabd2b4058b6c5ed68be6f1d3170b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Description",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "5 mins from station"
+        },
+        "table": "accomodations"
+      }
+    }
+  ]
+}
