@@ -51,7 +51,7 @@ export default function DestinationsForm()
 			{
 
 				alert(response.message);
-                // window.location.href="/admin/dashboard";
+                window.location.href="/admin/dashboard";
 			}
 			else
 			{
@@ -73,7 +73,7 @@ export default function DestinationsForm()
     }
 
     return(
-        <section className="pt-[15dvh] w-[100dvw] h-auto text-[--text-dark]">
+        <section className="pt-[15dvh] w-[100dvw] h-auto text-[--text-dark] p-6">
             <div className="flex justify-center items-center text-3xl font-bold pb-10">
                 Add Destination
             </div>

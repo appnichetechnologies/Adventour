@@ -1,21 +1,21 @@
 'use client';
 import Navbar from "../../components/common/Navbar";
-import DestinationsForm from "../../components/admin/DestinationsForm";
+import PackagesForm from "../../components/admin/PackagesForm";
 import Footer from "../../components/common/Footer";
 
-export default function DestinationsFormPage()
+export default function PackagesPage()
 {
-    return(
+    return (
         <section className="bg-white">
             <section id="navbar">
                 <Navbar/>
             </section>
             <section id="form">
-                <DestinationsForm/>
+                <PackagesForm/>
             </section>
             <section id="footer">
                 <Footer/>
             </section>
         </section>
-    )
+    );
 }

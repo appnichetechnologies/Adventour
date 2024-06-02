@@ -17,17 +17,17 @@ export default async function add_accomodation(data)
 
     try 
     {
-        const name = data['name'];
-        const destination = data['destination'];
-        const description = data['description'];
-        const price = data['price'];
+        const name = await data['name'];
+        const destination = await data['destination'];
+        const description = await data['description'];
+        const price = await data['price'];
 
         const accomodations = await connection.db.accomodations.create(
             {
                 Name: name,
                 Destination: destination,
                 Description: description,
-                PricePerNight: price,
+                PricePerNight: parseFloat(price),
             }
         );
 

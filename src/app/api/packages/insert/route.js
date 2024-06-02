@@ -5,8 +5,8 @@ export async function POST(request)
 {
     try 
     {
-        const data = request.json();
-        const result = add_package(data);
+        const data = await request.json();
+        const result = await add_package(data);
         return NextResponse.json(
             {
                 'returncode': result.returncode,

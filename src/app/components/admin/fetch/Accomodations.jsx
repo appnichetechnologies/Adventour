@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-export default function Destination()
+export default function Accomodations()
 {
     const [data, setData] = useState([]);
     var count = 0
@@ -8,20 +8,21 @@ export default function Destination()
     {
 
 		const fetchdata = async () => {
-			const res = await fetch("/api/destinations/fetch");
-            const dest = await res.json()
+			const res = await fetch("/api/accomodations/fetch");
+            const dest = await res.json();
             setData(dest.output);
 		}
 
 		fetchdata();
 	}, []);
 
+
     return (
         <div className="flex min-h-screen items-center justify-center bg-white">
             <div className="p-6 overflow-scroll px-0 flex flex-col gap-6">
                 <div className="flex justify-between">
-                    <h1 className="text-2xl font-bold"> Destinations </h1>
-                    <a href="/admin/destinations">
+                    <h1 className="text-2xl font-bold"> Accomodations </h1>
+                    <a href="/admin/accomodations">
                         <button className="bg-[--button-color] rounded-2xl text-white px-6 py-3">
                             Add
                         </button>
@@ -37,22 +38,17 @@ export default function Destination()
                             </th>
                             <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 px-12 py-4">
                                 <p className="block antialiased font-sans font-bold text-sm text-blue-gray-900 leading-none opacity-70">
-                                    Image
-                                </p>
-                            </th>
-                            <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 px-12 py-4">
-                                <p className="block antialiased font-sans font-bold text-sm text-blue-gray-900 leading-none opacity-70">
                                     Name
                                 </p>
                             </th>
                             <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 px-12 py-4">
                                 <p className="block antialiased font-sans text-sm text-blue-gray-900 font-bold leading-none opacity-70">
-                                    Country
+                                    Destination
                                 </p>
                             </th>
                             <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 px-12 py-4">
                                 <p className="block antialiased font-sans text-sm text-blue-gray-900 font-bold leading-none opacity-70">
-                                    Region
+                                    Price
                                 </p>
                             </th>
                             <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 px-12 py-4">
@@ -73,32 +69,18 @@ export default function Destination()
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
-                                        <div className="flex flex-col items-center gap-3">
-                                            {
-                                                items.Image.map((img)=>(
-                                                    <img
-                                                        key={img.id}
-                                                        src={img.url}
-                                                        alt={items.Name}
-                                                        className="inline-block relative object-center w-[40dvw] md:w-[10dvw] rounded-lg border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
-                                                    />
-                                                ))
-                                            }
-                                        </div>
-                                    </td>
-                                    <td className="p-4 border-b border-blue-gray-50">
                                         <p className="flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
                                         {items.Name}
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
                                         <p className="flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                                            {items.Country}
+                                            {items.Destination.Name}
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
-                                        <p className="flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                                            {items.Region}
+                                        <p className="py-2 flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold bg-red-200 text-red-500 rounded-xl">
+                                            ₹ {items.PricePerNight}
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">

@@ -36,7 +36,7 @@ export default async function add_package(data)
                 Accomodations: accomodations,
                 StartDate: new Date(start_date),
                 EndDate: new Date(end_date),
-                Price: price,
+                Price: parseFloat(price),
                 Description: description,
             }
         );
