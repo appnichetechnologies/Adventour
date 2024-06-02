@@ -9,7 +9,7 @@ async function fetch_package(data)
     {
         const id = data['id'];
 
-        let accomodation = await connection.db.accomodations.filter(
+        let packages = await connection.db.packages.filter(
             {
                 id: id
             }
@@ -18,8 +18,8 @@ async function fetch_package(data)
 
         return {
             'returncode': 200,
-            'message': 'Accomodation Fetched',
-            'output': accomodation
+            'message': 'Package Fetched',
+            'output': packages
         }
     } 
     catch(error) 
@@ -39,9 +39,14 @@ async function fetch_packages()
         let packages = await connection.db.packages.select(
             [
                 'Name',
+                'Type',
+                'StartDate',
+                'EndDate',
+                'Price',
                 'Destination.*',
+                'Accomodations.*',
+                'Activity.*',
                 'Description',
-                'PricePerNight',
             ]
         )
         .getAll();

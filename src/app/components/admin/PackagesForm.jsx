@@ -8,18 +8,15 @@ import { useState, useEffect } from "react";
 import { FaCalendarDay } from "react-icons/fa6";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 
-export default function PackagesForm()
-{
+export default function PackagesForm() {
     const [destination, setDestination] = useState([]);
     const [accommodation, setAccommodation] = useState([]);
     const [activities, setActivities] = useState([]);
 
-    useEffect(() => 
-    {
+    useEffect(() => {
 
-		const fetchdata = async () => 
-        {
-			const res = await fetch("/api/destinations/fetch");
+        const fetchdata = async () => {
+            const res = await fetch("/api/destinations/fetch");
             const response = await res.json();
             setDestination(response.output);
 
@@ -30,65 +27,64 @@ export default function PackagesForm()
             const res2 = await fetch("/api/accomodations/fetch");
             const response2 = await res2.json();
             setAccommodation(response2.output);
-		}
+        }
 
-		fetchdata();
-	}, []);
+        fetchdata();
+    }, []);
 
-    const onSubmit = async(event) => 
-	{
-		event.preventDefault();
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const type = event.target.type.value;
+        const start_date = event.target.start.value;
+        const end_date = event.target.end.value;
+        const price = event.target.price.value;
+        const destination = event.target.destination.value;
+        const accomodations = event.target.accomodation.value;
+        const activity = event.target.activities.value;
+        const description = event.target.description.value;
 
-		const name = event.target.name.value;
-		const destination = event.target.destination.value;
-		const description = event.target.description.value;
+        if (
+            name === '' || destination === '' || description === '' || type === '' || start_date === '' || end_date === '' || price === '' || destination === ''  ) {
+            alert('Invalid Values Please fill the form then submit');
+        }
 
-
-		if(
-            name==='' ||  destination==='' ||  description==='' ||
-            name===null  || destination===null || description===null ||
-            name===undefined ||  destination===undefined || description===undefined 
-        ) 
-		{
-			alert('Invalid Values Please fill the form then submit');
-		}
-
-		try 
-		{
-			
-
-			const res = await fetch('/api/activities/insert', {
-				method: 'POST',
-				body: JSON.stringify(
+        try {
+            const res = await fetch('/api/packages/insert', {
+                method: 'POST',
+                body: JSON.stringify(
                     {
                         name,
+                        type,
+                        start_date,
+                        end_date,
+                        price,
                         destination,
+                        accomodations,
+                        activity,
                         description
                     }
                 )
-			})
+            })
 
-			const response = await res.json()
-			
-			if(response.returncode === 200) 
-			{
+            const response = await res.json()
 
-				alert(response.message);
-                window.location.href="/admin/dashboard";
-			}
-			else
-			{
-				alert(response.message);
-			}
-		} 
-		catch (error) 
-		{
+            if (response.returncode === 200) {
+
+                alert(response.message);
+                window.location.href = "/admin/dashboard";
+            }
+            else {
+                alert(response.message);
+            }
+        }
+        catch (error) {
             alert(error.message);
-		}
-	}
+        }
+    }
 
 
-    return(
+    return (
         <section className="pt-[15dvh] w-[100dvw] h-auto text-[--text-dark] p-6">
             <div className="flex justify-center items-center text-3xl font-bold pb-10">
                 Add Package
@@ -102,10 +98,10 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <IoMdLocate />
                         </span>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <input
+                            type="text"
+                            id="name"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; Monsoon Package"
                         />
                     </div>
@@ -118,10 +114,10 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <BiCollection />
                         </span>
-                        <input 
-                            type="text" 
-                            id="type" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <input
+                            type="text"
+                            id="type"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; Hilly, Waterfall"
                         />
                     </div>
@@ -134,10 +130,10 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <FaCalendarDay />
                         </span>
-                        <input 
-                            type="date" 
-                            id="start" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <input
+                            type="date"
+                            id="start"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                         />
                     </div>
                 </div>
@@ -149,10 +145,10 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <FaCalendarDay />
                         </span>
-                        <input 
-                            type="date" 
-                            id="end" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <input
+                            type="date"
+                            id="end"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                         />
                     </div>
                 </div>
@@ -164,12 +160,12 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <RiMoneyRupeeCircleFill />
                         </span>
-                        <input 
+                        <input
                             type="number"
                             min={0}
-                            step={0.01} 
-                            id="price" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                            step={0.01}
+                            id="price"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; 1000.00"
                         />
                     </div>
@@ -182,13 +178,13 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <IoLocationSharp />
                         </span>
-                        <select 
-                            id="destination" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <select
+                            id="destination"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                         >
                             <option value=""> -- Select Destination -- </option>
                             {
-                                destination.map((items)=>(
+                                destination.map((items) => (
                                     <option key={items.id} value={items.id}>{items.Name}</option>
                                 ))
                             }
@@ -203,13 +199,13 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <FaHotel />
                         </span>
-                        <select 
-                            id="accomodation" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <select
+                            id="accomodation"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                         >
                             <option value=""> -- Select Accomodation -- </option>
                             {
-                                accommodation.map((items)=>(
+                                accommodation.map((items) => (
                                     <option key={items.id} value={items.id}>{items.Name}</option>
                                 ))
                             }
@@ -224,13 +220,13 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <GiHiking />
                         </span>
-                        <select 
-                            id="activities" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <select
+                            id="activities"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                         >
                             <option value=""> -- Select Activities -- </option>
                             {
-                                activities.map((items)=>(
+                                activities.map((items) => (
                                     <option key={items.id} value={items.id}>{items.Name}</option>
                                 ))
                             }
@@ -245,9 +241,9 @@ export default function PackagesForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <MdDescription />
                         </span>
-                        <textarea 
-                            id="description" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <textarea
+                            id="description"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; Mumbai, Maharashtra"
                         />
                     </div>

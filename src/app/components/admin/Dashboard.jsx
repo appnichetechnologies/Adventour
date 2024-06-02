@@ -1,7 +1,7 @@
 import Destination from "./fetch/Destination";
 import Accomodations from "./fetch/Accomodations";
 import Activities from "./fetch/Activities";
-
+import Packages from "./fetch/Packages";
 export default function Dashboard() 
 {
    
@@ -12,6 +12,7 @@ export default function Dashboard()
             <Destination/>
             <Accomodations/>
             <Activities/>
+            <Packages/>
         </section>
     )
 }

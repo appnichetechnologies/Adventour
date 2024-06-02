@@ -20,7 +20,7 @@ export default function Accomodations()
     return (
         <div className="flex min-h-screen items-center justify-center bg-white">
             <div className="p-6 overflow-scroll px-0 flex flex-col gap-6">
-                <div className="flex justify-between">
+                <div className="flex justify-between p-8">
                     <h1 className="text-2xl font-bold"> Accomodations </h1>
                     <a href="/admin/accomodations">
                         <button className="bg-[--button-color] rounded-2xl text-white px-6 py-3">

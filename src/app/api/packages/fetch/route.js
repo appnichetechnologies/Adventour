@@ -5,8 +5,8 @@ export async function POST(request)
 {
     try 
     {
-        const data = request.data();
-        const result = fetch_package(data)
+        const data = await request.data();
+        const result = await fetch_package(data)
         return NextResponse.json(
             {
                 'returncode': result.returncode,
@@ -35,7 +35,7 @@ export async function GET()
     try 
     {
     
-        const result = fetch_packages()
+        const result = await fetch_packages()
         return NextResponse.json(
             {
                 'returncode': result.returncode,
