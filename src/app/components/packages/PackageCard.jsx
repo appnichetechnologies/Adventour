@@ -29,7 +29,7 @@ export default function PackageCard() {
 							>
 								{
 									items.Destination.Image.map((image) => (
-										<div className="md:w-[25dvw] w-[80dvw]">
+										<div key={image.id} className="md:w-[25dvw] w-[80dvw]">
 											<img
 												src={image.url}
 												alt={image.id}

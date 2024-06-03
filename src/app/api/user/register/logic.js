@@ -22,22 +22,6 @@ export default async function sign_up(data)
             const email = data['email'];
             const password = data['password'];
 
-            let user = await connection.db.users.filter(
-                {
-                    Student_Username: username
-                }
-            )
-            .getAll();
-
-            if(user!=undefined || user!=null, user.length!=0)
-            {
-                return {
-                    'returncode': 400,
-                    'message': "User account Found, Please Login.",
-                    'output': []
-                }
-            }
-
             const user_add = await connection.db.users.create({
                 UserName: username,
                 Email: email,
@@ -48,7 +32,7 @@ export default async function sign_up(data)
             return {
                 'returncode': 200,
                 'message': 'User Registered',
-                'output': user
+                'output': user_add
             }
         } 
         catch(error) 

@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import sign_in from "./logic";
 
-export async function POST(request)
-{
-    try 
-    {
+export async function POST(request) {
+    try {
         const data = await request.json();
         const result = await sign_in(data);
         return NextResponse.json(
@@ -13,19 +11,18 @@ export async function POST(request)
                 'message': result.message,
                 'output': result.output
             }
-        )
-    } 
-    catch (error) 
-    {
+        );
+    }
+    catch (error) {
         return NextResponse.json(
-        {
-            'returncode': 500,
-            'message': error.message,
-            'output':[]
-        },
-        {
-            status : 500
-        }
-    );
+            {
+                'returncode': 500,
+                'message': error.message,
+                'output': []
+            },
+            {
+                status: 500
+            }
+        );
     }
 }

@@ -22,12 +22,12 @@ export default function LandingPage()
                         clients.
                     </p>
                     <div id="action-buttons" className="flex gap-8 font-bold text-sm">
-                        <a href="">
+                        <a href="/packages">
                             <button className="bg-[--button-color] rounded-2xl text-white px-6 py-3">
                                 Plan Trip
                             </button>
                         </a>
-                        <a href="">
+                        <a href="/packages">
                             <button className="bg-[--button-color] rounded-2xl text-white px-6 py-3">
                                 Book Trip
                             </button>

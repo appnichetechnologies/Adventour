@@ -36,7 +36,7 @@ async function fetch_package(data) {
                 return {
                     'returncode': 200,
                     'message': 'Package Fetched',
-                    'output': packages[pkg]
+                    'output': [packages[pkg]]
                 }
             }
         }
