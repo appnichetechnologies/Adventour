@@ -5,8 +5,9 @@ export async function POST(request)
 {
     try 
     {
-        const data = await request.data();
-        const result = await fetch_package(data)
+        const data = await request.json();
+        const result = await fetch_package(data);
+        console.log(result);
         return NextResponse.json(
             {
                 'returncode': result.returncode,

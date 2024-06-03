@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
-export default function Packages()
-{
+export default function Packages() {
     const [data, setData] = useState([]);
     var count = 0
 
-    useEffect(() => 
-    {
+    useEffect(() => {
 
-		const fetchdata = async () => {
-			const res = await fetch("/api/packages/fetch");
+        const fetchdata = async () => {
+            const res = await fetch("/api/packages/fetch");
             const dest = await res.json();
             setData(dest.output);
-		}
+        }
 
-		fetchdata();
-	}, []);
+        fetchdata();
+    }, []);
 
     return (
         <div className="flex min-h-screen items-center justify-center bg-white">
@@ -80,12 +78,12 @@ export default function Packages()
                                     Description
                                 </p>
                             </th>
-                        
+
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            data.map((items)=>(
+                            data.map((items) => (
                                 <tr key={items.id}>
                                     <td className="p-4 border-b border-blue-gray-50">
                                         <p className="flex justify-center items-center antialiased font-sans text-xl leading-normal text-blue-gray-900 font-bold">
@@ -94,7 +92,7 @@ export default function Packages()
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
                                         <p className="flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                                        {items.Name}
+                                            {items.Name}
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
@@ -114,29 +112,29 @@ export default function Packages()
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
                                         <p className="py-2 flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold rounded-xl">
-                                        {
-											items.Type === "Hilly" ? (
-												<span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-green-300 text-green-800 rounded-lg bg-opacity-80">
-													{items.Type}
-												</span>
-											) : items.Type === "Tourism" ? (
-												<span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-yellow-300 text-yellow-800 rounded-lg bg-opacity-80">
-													{items.Type}
-												</span>
-											) : items.Type === "Hiking" ? (
-												<span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-red-300 text-red-800 rounded-lg bg-opacity-80">
-													{items.Type}
-												</span>
-											) : items.Type === "Waterfall" ? (
-												<span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-blue-300 text-blue-800 rounded-lg bg-opacity-80">
-													{items.Type}
-												</span>
-											) : (
-												<span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-gray-300 text-gray-800 rounded-lg bg-opacity-80">
-													{items.Type}
-												</span>
-											)
-										}
+                                            {
+                                                items.Type === "Hilly" ? (
+                                                    <span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-green-300 text-green-800 rounded-lg bg-opacity-80">
+                                                        {items.Type}
+                                                    </span>
+                                                ) : items.Type === "Tourism" ? (
+                                                    <span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-yellow-300 text-yellow-800 rounded-lg bg-opacity-80">
+                                                        {items.Type}
+                                                    </span>
+                                                ) : items.Type === "Hiking" ? (
+                                                    <span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-red-300 text-red-800 rounded-lg bg-opacity-80">
+                                                        {items.Type}
+                                                    </span>
+                                                ) : items.Type === "Waterfall" ? (
+                                                    <span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-blue-300 text-blue-800 rounded-lg bg-opacity-80">
+                                                        {items.Type}
+                                                    </span>
+                                                ) : (
+                                                    <span className="p-1.5 text-xs font-bold uppercase tracking-wider bg-gray-300 text-gray-800 rounded-lg bg-opacity-80">
+                                                        {items.Type}
+                                                    </span>
+                                                )
+                                            }
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
@@ -155,14 +153,14 @@ export default function Packages()
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
-                                        <div 
+                                        <div
                                             className="antialiased flex flex-wrap font-sans text-sm leading-normal 
                                             text-gray-900 font-normal">
                                             <p className="w-[25dvw]">
                                                 {items.Description}
                                             </p>
                                         </div>
-                                        
+
                                     </td>
                                 </tr>
                             ))

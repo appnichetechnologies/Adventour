@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
-export default function Accomodations()
-{
+export default function Accomodations() {
     const [data, setData] = useState([]);
     var count = 0
 
-    useEffect(() => 
-    {
+    useEffect(() => {
 
-		const fetchdata = async () => {
-			const res = await fetch("/api/accomodations/fetch");
+        const fetchdata = async () => {
+            const res = await fetch("/api/accomodations/fetch");
             const dest = await res.json();
             setData(dest.output);
-		}
+        }
 
-		fetchdata();
-	}, []);
+        fetchdata();
+    }, []);
 
 
     return (
@@ -56,12 +54,12 @@ export default function Accomodations()
                                     Description
                                 </p>
                             </th>
-                        
+
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            data.map((items)=>(
+                            data.map((items) => (
                                 <tr key={items.id}>
                                     <td className="p-4 border-b border-blue-gray-50">
                                         <p className="flex justify-center items-center antialiased font-sans text-xl leading-normal text-blue-gray-900 font-bold">
@@ -70,7 +68,7 @@ export default function Accomodations()
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
                                         <p className="flex justify-center items-center antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                                        {items.Name}
+                                            {items.Name}
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
@@ -84,14 +82,14 @@ export default function Accomodations()
                                         </p>
                                     </td>
                                     <td className="p-4 border-b border-blue-gray-50">
-                                        <div 
+                                        <div
                                             className="antialiased flex flex-wrap font-sans text-sm leading-normal 
                                             text-gray-900 font-normal">
                                             <p className="w-[25dvw]">
                                                 {items.Description}
                                             </p>
                                         </div>
-                                        
+
                                     </td>
                                 </tr>
                             ))
