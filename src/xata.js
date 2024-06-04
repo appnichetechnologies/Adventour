@@ -19,6 +19,7 @@ const tables = [
       },
       { name: "Type", type: "string", notNull: true, defaultValue: "User" },
     ],
+    revLinks: [{ column: "User", table: "bookings" }],
   },
   {
     name: "destinations",
@@ -102,6 +103,7 @@ const tables = [
         defaultValue: "xxxxxxx",
       },
     ],
+    revLinks: [{ column: "Packages", table: "bookings" }],
   },
   {
     name: "activities",
@@ -116,6 +118,13 @@ const tables = [
       },
     ],
     revLinks: [{ column: "Activity", table: "packages" }],
+  },
+  {
+    name: "bookings",
+    columns: [
+      { name: "Packages", type: "link", link: { table: "packages" } },
+      { name: "User", type: "link", link: { table: "users" } },
+    ],
   },
 ];
 /** @type { import('@xata.io/client').ClientConstructor<{}> } */

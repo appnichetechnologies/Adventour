@@ -4,6 +4,44 @@ import { LiaHotelSolid } from "react-icons/lia";
 import { RiRunLine } from "react-icons/ri";
 export default function BookingsPage() {
 
+	const BookingAdd = async() =>{
+		const user_id = sessionStorage.getItem('user_id');
+		const package_id = sessionStorage.getItem('package_id');
+		
+		
+        if (user_id==='' || package_id==='' || user_id===null || package_id===null || user_id===undefined || package_id===undefined) {
+            alert('Invalid Values Please fill the form then submit');
+        }
+
+        try {
+
+
+            const res = await fetch('/api/bookings', {
+                method: 'POST',
+                body: JSON.stringify(
+                    {
+                        user_id,
+						package_id
+                    }
+                )
+            })
+
+            const response = await res.json()
+
+            if (response.returncode === 200) {
+
+                alert(response.message);
+				sessionStorage.setItem('package_id', '');
+                window.location.href = "/";
+            }
+            else {
+                alert(response.message);
+            }
+        }
+        catch (error) {
+            alert(error.message);
+        }
+	}
 
 	const formatDate = (datetime) => {
 		const date = new Date(datetime);
@@ -102,7 +140,7 @@ export default function BookingsPage() {
 											<p className="text-sm">{formatDate(items.EndDate)}</p>
 										</div>
 									</div>
-									<button className="bg-purple-500 text-center cursor-pointer text-white p-2 font-bold rounded-lg">
+									<button type="submit" onClick={BookingAdd} className="bg-purple-500 text-center cursor-pointer text-white p-2 font-bold rounded-lg">
 											Reserve
 									</button>
 									<div className="flex justify-center">

@@ -1,0 +1,12 @@
+{
+  "id": "mig_cpf3kbqmod590u5ojnug",
+  "parentID": "mig_cpf3jqda5gln94l7jn30",
+  "checksum": "1:c106a64ff4bdcc945e43a91e750ac31fc271b36350bc5210532a825ac8b06ec5",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "bookings"
+      }
+    }
+  ]
+}

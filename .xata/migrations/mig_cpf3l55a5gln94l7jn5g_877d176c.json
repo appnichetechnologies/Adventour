@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpf3l55a5gln94l7jn5g",
+  "parentID": "mig_cpf3l1ta5gln94l7jn4g",
+  "checksum": "1:877d176c12b723e963984c37761533a14541c879591eb6e2f1b53db16a43f3fd",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Packages",
+          "type": "link",
+          "link": {
+            "table": "packages"
+          }
+        },
+        "table": "bookings"
+      }
+    }
+  ]
+}

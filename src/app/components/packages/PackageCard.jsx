@@ -24,7 +24,7 @@ export default function PackageCard() {
 							<a
 								className="rounded-lg shadow-2xl shadow-gray-500 w-auto h-auto"
 								key={items.id}
-								onClick={sessionSetter(items.id)}
+								onClick={()=>{sessionSetter(items.id)}}
 								href="/bookings"
 							>
 								{

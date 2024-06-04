@@ -7,7 +7,6 @@ export async function POST(request)
     {
         const data = await request.json();
         const result = await fetch_package(data);
-        console.log(result);
         return NextResponse.json(
             {
                 'returncode': result.returncode,

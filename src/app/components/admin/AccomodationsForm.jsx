@@ -3,48 +3,43 @@ import { IoMdLocate } from "react-icons/io";
 import { MdDescription } from "react-icons/md";
 import { useState, useEffect } from "react";
 
-export default function AccomodationsForm()
-{
+export default function AccomodationsForm() {
     const [data, setData] = useState([]);
 
-    useEffect(() => 
-    {
+    useEffect(() => {
 
-		const fetchdata = async () => {
-			const res = await fetch("/api/destinations/fetch");
+        const fetchdata = async () => {
+            const res = await fetch("/api/destinations/fetch");
             const response = await res.json()
             setData(response.output);
-		}
+        }
 
-		fetchdata();
-	}, []);
+        fetchdata();
+    }, []);
 
-    const onSubmit = async(event) => 
-	{
-		event.preventDefault();
+    const onSubmit = async (event) => {
+        event.preventDefault();
 
-		const name = event.target.name.value;
-		const destination = event.target.destination.value;
-		const price = event.target.price.value;
-		const description = event.target.description.value;
+        const name = event.target.name.value;
+        const destination = event.target.destination.value;
+        const price = event.target.price.value;
+        const description = event.target.description.value;
 
 
-		if(
-            name==='' ||  destination==='' ||  price==='' ||  description==='' ||
-            name===null  || destination===null || price===null || description===null ||
-            name===undefined ||  destination===undefined ||  price===undefined || description===undefined 
-        ) 
-		{
-			alert('Invalid Values Please fill the form then submit');
-		}
+        if (
+            name === '' || destination === '' || price === '' || description === '' ||
+            name === null || destination === null || price === null || description === null ||
+            name === undefined || destination === undefined || price === undefined || description === undefined
+        ) {
+            alert('Invalid Values Please fill the form then submit');
+        }
 
-		try 
-		{
-			
+        try {
 
-			const res = await fetch('/api/accomodations/insert', {
-				method: 'POST',
-				body: JSON.stringify(
+
+            const res = await fetch('/api/accomodations/insert', {
+                method: 'POST',
+                body: JSON.stringify(
                     {
                         name,
                         destination,
@@ -52,29 +47,26 @@ export default function AccomodationsForm()
                         price
                     }
                 )
-			})
+            })
 
-			const response = await res.json()
-			
-			if(response.returncode === 200) 
-			{
+            const response = await res.json()
 
-				alert(response.message);
-                window.location.href="/admin/dashboard";
-			}
-			else
-			{
-				alert(response.message);
-			}
-		} 
-		catch (error) 
-		{
+            if (response.returncode === 200) {
+
+                alert(response.message);
+                window.location.href = "/admin/dashboard";
+            }
+            else {
+                alert(response.message);
+            }
+        }
+        catch (error) {
             alert(error.message);
-		}
-	}
+        }
+    }
 
 
-    return(
+    return (
         <section className="pt-[15dvh] w-[100dvw] h-auto text-[--text-dark] p-6">
             <div className="flex justify-center items-center text-3xl font-bold pb-10">
                 Add Accommodation
@@ -88,10 +80,10 @@ export default function AccomodationsForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <IoMdLocate />
                         </span>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <input
+                            type="text"
+                            id="name"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; Hotel Taj Resorts"
                         />
                     </div>
@@ -104,13 +96,13 @@ export default function AccomodationsForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <IoLocationSharp />
                         </span>
-                        <select 
-                            id="destination" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <select
+                            id="destination"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                         >
                             <option value=""> -- Select Destination -- </option>
                             {
-                                data.map((items)=>(
+                                data.map((items) => (
                                     <option key={items.id} value={items.id}>{items.Name}</option>
                                 ))
                             }
@@ -125,9 +117,9 @@ export default function AccomodationsForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <MdDescription />
                         </span>
-                        <textarea 
-                            id="description" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                        <textarea
+                            id="description"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; Mumbai, Maharashtra"
                         />
                     </div>
@@ -140,12 +132,12 @@ export default function AccomodationsForm()
                         <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-300 rounded-s-md">
                             <IoMdLocate />
                         </span>
-                        <input 
+                        <input
                             type="number"
                             min={0}
-                            step={0.01} 
-                            id="price" 
-                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5" 
+                            step={0.01}
+                            id="price"
+                            className="rounded-none outline-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 block flex-1 min-w-0 w-full text-sm p-2.5"
                             placeholder="eg; 1000.00"
                         />
                     </div>
